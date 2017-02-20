@@ -7,4 +7,5 @@
       <view class="title">{{item.title}}</view>
     </view>
   </view>
+  <icon type="success" size="50" class="post" bindtap="onPostClick"/>
 </view>

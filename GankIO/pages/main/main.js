@@ -28,9 +28,29 @@ Page({
 	},
 	onReachBottom: function () {
 
+	},
+
+	onItemClick:function(event){
+
+		var targetUrl = Constants.PAGE_SPECIFIC;
+		if (event.currentTarget.dataset.publishTime!=null) {
+			targetUrl = targetUrl+"?publishTime="+event.currentTarget.dataset.publishTime;
+		}
+
+		//跳转
+		wx.navigateTo({
+			//传入页面链接
+			url:targetUrl
+		});
+	},
+
+	onPostClick:function(event){
+		console.log("onPostClick")
+		wx.navigateTo({
+			//
+			url:Constants.PAGE_POST
+		})
 	}
-
-
 
 })
 
