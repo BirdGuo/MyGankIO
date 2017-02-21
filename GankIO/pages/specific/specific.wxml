@@ -1,0 +1,21 @@
+<view class="index">
+  <loading hidden="{{hidden}}">{{loadingText}}</loading>
+  <toast hidden="{{toastHidden}}" bindchange="onToastChanged">{{toastText}}</toast>
+  <modal confirm-text="保存" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="onSaveClick" bindcancel="onCancelClick">
+    <view>
+      <image class="modalImage" src="{{imageUrl}}" mode="aspectFill"></image>
+    </view>
+  </modal>
+  <view>
+    <image class="image" src="{{imageUrl}}" mode="aspectFill" bindtap="onImageClick" />
+  </view>
+  <view class="frame" wx:for="{{data}}">
+    <view class="tag">{{item.tag}}</view>
+    <view wx:for="{{item.singleItems}}">
+      <view class="singleItem" href="{{item.src}}">{{index}},{{item.title}}</view>
+    </view>
+  </view>
+  <view class="videoFrame">
+    <video class="video" src="http://v.youku.com/v_show/id_XMTczMjE2MTMzMg==.mp4"></video>
+  </view>
+</view>
