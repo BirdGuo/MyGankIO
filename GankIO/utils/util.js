@@ -17,5 +17,21 @@ function formatNumber(n) {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  parseHtml:parseHtml,
+  json2Form:json2Form
+}
+
+
+function parseHtml(htmlBlock){
+  var parser = new DOMParser();
+  return parser.parseFromString(htmlBlock,"text/html")
+}
+
+function json2Form(json){
+  var str = []
+  for(var p in json){
+    str.push(encodeURIComponent(p)+"="+encodeURIComponent(json[p]))
+  }
+  return str.join("&")
 }

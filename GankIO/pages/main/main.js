@@ -76,11 +76,11 @@ function requestData(that, targetPage) {
 				return;
 			}
 
-			console.log(res)
+			// console.log(res)
 
 			for (var i = 0; i < res.data.results.length; i++) {
 				// Things[i]
-				console.log(res.data.results[i])
+				// console.log(res.data.results[i])
 				bindData(res.data.results[i]);
 			}
 
